@@ -28,9 +28,9 @@ session_start();
             <?php
 
             $itens = array(['nome'=> 'curso 1','imagens'=>'item1.jpg','preco'=>'200'],['nome'=> 'curso 2','imagens'=>'item2.jpg','preco'=>'100'],['nome'=> 'curso 3','imagens'=>'item3.png','preco'=>'400']);
-            
+                        
             foreach ($itens as $key => $value){
-
+           
             ?>
 
                 <div class="produto">
@@ -58,14 +58,13 @@ session_start();
                     if(isset($_SESSION['carrinho'][$idProduto])){
                         $_SESSION['carrinho'][$idProduto]['quantidade']++;
                     }else{
-                        $_SESSION['carrinho'][$idProduto] = array('quantidade'=>1,'nome'=> $itens[$idProduto]['nome'],'preco'=> $itens[$idProduto]['preco']);   
+                        $_SESSION['carrinho'][$idProduto] = array('quantidade'=>1,'nome'=> $itens[$idProduto]['nome'],'preco'=> $itens[$idProduto]['preco']);
                     }
                     echo "<script> alert('O item foi adicionado ao carrinho.'); </script>";
                 }else{
-                    /* echo 'o produto não existe';  */
-                    die("Você não poode adicionar este item ao carrinho - não existe.");
+                    echo "<script> alert('Você não poode adicionar este item ao carrinho - produto não existe.'); </script>";
                 }
-            }
+            } 
 
             ?>
 
