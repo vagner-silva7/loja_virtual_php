@@ -69,28 +69,28 @@ session_start();
 
             ?>
 
-                <div class="carrinho">
+        <div class="carrinho">
 
-                    <h1>Itens do carrinho</h1>
+            <h1>Itens do carrinho</h1>
 
-                </div>
+        </div>
 
-                <div class="itenscarrinho">
+            <?php
 
-                    <?php
+                foreach ($_SESSION['carrinho'] as $key => $value){
 
-                    foreach ($_SESSION['carrinho'] as $key => $value){
+                    echo '<div class="itenscarrinho">';
+                
+                    /* echo ('Nome: '.$value['nome'].'  |   Quantidade: '.$value['quantidade'].'  |   Preco: '.$value['preco']. '  |   Total: '.$value['quantidade']*$value['preco']); */
 
-                        /* echo ('Nome: '.$value['nome'].', Quantidade: '.$value['quantidade'].', Preco: '.$value['preco']. ', Total: '.$value['quantidade']*$value['preco']); */
+                    echo '<p> Nome: '.$value['nome'].'  |   Quantidade: '.$value['quantidade'].'  |   Preco: '.$value['preco']. '  |   Total: '.$value['quantidade']*$value['preco']; '</p>';
 
-                        echo '<p> Nome: '.$value['nome'].', Quantidade: '.$value['quantidade'].', Preco: '.$value['preco']. ', Total: '.$value['quantidade']*$value['preco']; '</p>';
+                    echo '</div>';
+                
+                }
 
-                    }
-
-        
-                    ?>
-
-                </div>
+            
+            ?>
 
     </main>
 
