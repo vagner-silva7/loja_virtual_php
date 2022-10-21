@@ -78,7 +78,7 @@ session_start();
             <?php
 
                 foreach ($_SESSION['carrinho'] as $key => $value){
-
+                    
                     echo '<div class="itenscarrinho">';
                 
                     /* echo ('Nome: '.$value['nome'].'  |   Quantidade: '.$value['quantidade'].'  |   Preco: '.$value['preco']. '  |   Total: '.$value['quantidade']*$value['preco']); */
@@ -86,15 +86,14 @@ session_start();
                     echo '<p> Nome: '.$value['nome'].'  |   Quantidade: '.$value['quantidade'].'  |   Preco: '.$value['preco']. '  |   Total: '.$value['quantidade']*$value['preco']; '</p>';
 
                     echo '</div>';
-                
+ 
                 }
-
-            
+          
             ?>
 
     </main>
 
-    <footer >
+    <footer class="fixarRodape">
 
     <h1><a href="index.php">Voltar a pagina principal</a></h1>
 
